@@ -21,9 +21,23 @@ public class ProductsPage extends BasePage {
     @CacheLookup
     private WebElement onesie;
 
+    @FindBy(css = ".shopping_cart_link")
+    @CacheLookup
+    private WebElement cart;
+
+    @FindBy(css = "#checkout")
+    @CacheLookup
+    private WebElement checkout;
+
     public void addToCart() {
         clickFunction(backpack);
         waitFor(1);
         clickFunction(onesie);
+    }
+    public void goToCart(){
+        clickFunction(cart);
+    }
+    public void clickCheckoutButton(){
+        clickFunction(checkout);
     }
 }

@@ -22,11 +22,13 @@ public class saucedemoTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("LoginPage")
+    @DisplayName("ProductsPage")
     public void test2() {
 
         productsPage = new ProductsPage(driver);
         productsPage.addToCart();
+        productsPage.goToCart();
+        productsPage.clickCheckoutButton();
 
     }
 

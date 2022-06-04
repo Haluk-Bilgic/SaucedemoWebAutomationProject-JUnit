@@ -1,5 +1,6 @@
 package TestPackage;
 
+import Pages.CheckoutPage;
 import Pages.LoginPage;
 import Pages.ProductsPage;
 import org.junit.Test;
@@ -9,6 +10,7 @@ public class saucedemoTest extends BaseTest {
 
     LoginPage loginPage;
     ProductsPage productsPage;
+    CheckoutPage checkoutPage;
 
     @Test
     @DisplayName("LoginPage")
@@ -29,6 +31,16 @@ public class saucedemoTest extends BaseTest {
         productsPage.addToCart();
         productsPage.goToCart();
         productsPage.clickCheckoutButton();
+
+    }
+
+    @Test
+    @DisplayName("CheckoutPage")
+    public void test3() {
+
+        checkoutPage = new CheckoutPage(driver);
+        checkoutPage.typeYourInformation();
+        checkoutPage.clickContinueButton();
 
     }
 

@@ -14,19 +14,15 @@ public class ProductsPage extends BasePage {
     }
 
     @FindBy(css = "#add-to-cart-sauce-labs-backpack")
-    @CacheLookup
     private WebElement backpack;
 
     @FindBy(css = "#add-to-cart-sauce-labs-onesie")
-    @CacheLookup
     private WebElement onesie;
 
     @FindBy(css = ".shopping_cart_link")
-    @CacheLookup
     private WebElement cart;
 
     @FindBy(css = "#checkout")
-    @CacheLookup
     private WebElement checkout;
 
     public void addToCart() {

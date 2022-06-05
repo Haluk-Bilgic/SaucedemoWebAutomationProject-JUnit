@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.BrowserUtils;
 
 public class CheckoutPage extends BasePage {
 
@@ -28,6 +29,10 @@ public class CheckoutPage extends BasePage {
     @CacheLookup
     private WebElement continueButton;
 
+    @FindBy(xpath = "//div[@class='summary_subtotal_label']")
+    private WebElement itemTotal;
+
+
     public void typeYourInformation() {
         sendKeysFunction(firstName,"Haluk");
         waitFor(1);
@@ -37,6 +42,10 @@ public class CheckoutPage extends BasePage {
     }
     public void clickContinueButton(){
         clickFunction(continueButton);
+    }
+    public void checkItemTotal(){
+        assertion(itemTotal,"Item total: $37.98");
+        BrowserUtils.getScreenshot("ProductsPrices",driver);
     }
 
 }

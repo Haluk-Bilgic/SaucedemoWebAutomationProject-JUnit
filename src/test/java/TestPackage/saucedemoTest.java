@@ -20,7 +20,6 @@ public class saucedemoTest extends BaseTest {
         loginPage.typeUsername("standard_user");
         loginPage.typePassword("secret_sauce");
         loginPage.clickLoginButton();
-
     }
 
     @Test
@@ -31,7 +30,6 @@ public class saucedemoTest extends BaseTest {
         productsPage.addToCart();
         productsPage.goToCart();
         productsPage.clickCheckoutButton();
-
     }
 
     @Test
@@ -41,7 +39,7 @@ public class saucedemoTest extends BaseTest {
         checkoutPage = new CheckoutPage(driver);
         checkoutPage.typeYourInformation();
         checkoutPage.clickContinueButton();
+        checkoutPage.checkItemTotal();
 
     }
-
 }
